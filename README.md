@@ -42,4 +42,4 @@ MIT License - feel free to fork and customize!
 
 ---
 
-*Ready to jack in? *
+*Ready to jack in?*
