@@ -4,7 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyberpunk-themed web developer portfolio - Full-stack development services">
+    <meta name="theme-color" content="#00ff41">
     <title>NETRUNNER.DEV // JACK IN</title>
+    
+    <!-- Optimized font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400&display=swap">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,7 +40,6 @@
    ░   ░ ░    ░    ░        ░░   ░  ░░░ ░ ░    ░   ░ ░    ░   ░ ░    ░     ░░   ░ 
          ░    ░  ░           ░        ░              ░          ░    ░  ░   ░     
                     </pre>
-
                 </div>
                 <div style="text-align: center; margin: 20px 0;">
                     <span class="typing">FULL-STACK WEB DEVELOPER // DIGITAL ARCHITECT</span>
@@ -52,147 +62,147 @@
                 └─$ ls -la /navigation/
             </div>
             <div class="terminal-content">
-                <nav class="nav-menu">
-                    <a href="#about" class="nav-item">[ ABOUT.EXE ]</a>
-                    <a href="#skills" class="nav-item">[ SKILLS.DAT ]</a>
-                    <a href="#projects" class="nav-item">[ PROJECTS.DIR ]</a>
-                    <a href="#contact" class="nav-item">[ CONTACT.SYS ]</a>
+                <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+                    <a href="#about" class="nav-item" aria-describedby="about-desc">[ ABOUT.EXE ]</a>
+                    <a href="#skills" class="nav-item" aria-describedby="skills-desc">[ SKILLS.DAT ]</a>
+                    <a href="#projects" class="nav-item" aria-describedby="projects-desc">[ PROJECTS.DIR ]</a>
+                    <a href="#contact" class="nav-item" aria-describedby="contact-desc">[ CONTACT.SYS ]</a>
                 </nav>
             </div>
         </div>
 
         <!-- About Section -->
-        <div class="terminal-window" id="about">
+        <section class="terminal-window" id="about" aria-labelledby="about-title">
             <div class="terminal-header">
                 └─$ cat ./about_me.txt
             </div>
             <div class="terminal-content">
-                <div class="section-title">╭── ABOUT.EXE ──╮</div>
+                <h2 class="section-title" id="about-title">╭── ABOUT.EXE ──╮</h2>
                 <div style="margin: 20px 0;">
-                    <pre style="color: #00ff41;">
+                    <pre style="color: #00ff41;" aria-label="About information display">
 ┌─ IDENTITY MATRIX ─┐
 │ > LOREM IPSUM     │  Lorem ipsum dolor sit amet, consectetur adipiscing
 │ > DOLOR SIT       │  elit, sed do eiusmod tempor incididunt ut labore
 │ > AMET LOREM      │  et dolore magna aliqua. Ut enim ad minim veniam,
 │ > CONSECTETUR     │  quis nostrud exercitation ullamco laboris.
 └───────────────────┘  
-                       Sed ut perspiciatis unde omnis iste natus error
-░░░░░░░░░░░░░░░░░░░░   sit voluptatem accusantium doloremque laudantium.
-░ EXPERIENCE: XX YRS ░  
-░ CLIENTS SERVED: XX+░  "Neque porro quisquam est qui dolorem ipsum
-░ UPTIME: XX.X%      ░   quia dolor sit amet." - Lorem ipsum ready?
-░░░░░░░░░░░░░░░░░░░░
+┌─ CORE VALUES ─────┐
+│ > INNOVATION       │  Embrace change and push boundaries. 
+│ > COLLABORATION    │  Work together to achieve more.
+│ > INTEGRITY        │  Maintain transparency and trust.
+│ > EXCELLENCE       │  Strive for the highest quality in everything.
+└───────────────────┘
                     </pre>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Skills Section -->
-        <div class="terminal-window" id="skills">
+        <section class="terminal-window" id="skills" aria-labelledby="skills-title">
             <div class="terminal-header">
                 └─$ ./scan_skills.sh --verbose
             </div>
             <div class="terminal-content">
-                <div class="section-title">╭── SKILL MATRIX ──╮</div>
-                <div class="skill-grid">
-                    <div class="skill-item">
-                        <div style="color: #ff0040; font-weight: bold;">▓▓▓ FRONTEND ▓▓▓</div>
-                        <div style="margin: 10px 0;">
-                            ┌ Lorem/Ipsum ████████████ 95%<br>
-                            ┌ Dolor/Sit ██████████░░ 90%<br>
-                            ┌ Amet/Consectetur ███████████░ 92%<br>
-                            ┌ Adipiscing ████████░░░░ 75%
+                <h2 class="section-title" id="skills-title">╭── SKILL MATRIX ──╮</h2>
+                <div class="skill-grid" role="list" aria-label="Technical skills">
+                    <div class="skill-item" role="listitem">
+                        <h3 style="color: #ff0040; font-weight: bold;">▓▓▓ FRONTEND ▓▓▓</h3>
+                        <div style="margin: 10px 0;" aria-label="Frontend skills progress">
+                            <div aria-label="Lorem/Ipsum 95%">┌ Lorem/Ipsum ████████████ 95%</div><br>
+                            <div aria-label="Dolor/Sit 90%">┌ Dolor/Sit ██████████░░ 90%</div><br>
+                            <div aria-label="Amet/Consectetur 92%">┌ Amet/Consectetur ███████████░ 92%</div><br>
+                            <div aria-label="Adipiscing 75%">┌ Adipiscing ████████░░░░ 75%</div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div style="color: #ff0040; font-weight: bold;">▓▓▓ BACKEND ▓▓▓</div>
-                        <div style="margin: 10px 0;">
-                            ┌ Tempor/Incididunt ███████████░ 88%<br>
-                            ┌ Labore/Dolore ██████████░░ 85%<br>
-                            ┌ Magna/Aliqua ████████░░░░ 80%<br>
-                            ┌ Enim/Minim ███████░░░░░ 70%
+                    <div class="skill-item" role="listitem">
+                        <h3 style="color: #ff0040; font-weight: bold;">▓▓▓ BACKEND ▓▓▓</h3>
+                        <div style="margin: 10px 0;" aria-label="Backend skills progress">
+                            <div aria-label="Tempor/Incididunt 88%">┌ Tempor/Incididunt ███████████░ 88%</div><br>
+                            <div aria-label="Labore/Dolore 85%">┌ Labore/Dolore ██████████░░ 85%</div><br>
+                            <div aria-label="Magna/Aliqua 80%">┌ Magna/Aliqua ████████░░░░ 80%</div><br>
+                            <div aria-label="Enim/Minim 70%">┌ Enim/Minim ███████░░░░░ 70%</div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div style="color: #ff0040; font-weight: bold;">▓▓▓ DEVOPS ▓▓▓</div>
-                        <div style="margin: 10px 0;">
-                            ┌ Veniam/Quis ████████░░░░ 75%<br>
-                            ┌ Nostrud Exercitation ██████████░░ 82%<br>
-                            ┌ Ullamco/Laboris ███████████░ 90%<br>
-                            ┌ Nisi/Aliquip ████████████ 95%
+                    <div class="skill-item" role="listitem">
+                        <h3 style="color: #ff0040; font-weight: bold;">▓▓▓ DEVOPS ▓▓▓</h3>
+                        <div style="margin: 10px 0;" aria-label="DevOps skills progress">
+                            <div aria-label="Veniam/Quis 75%">┌ Veniam/Quis ████████░░░░ 75%</div><br>
+                            <div aria-label="Nostrud Exercitation 82%">┌ Nostrud Exercitation ██████████░░ 82%</div><br>
+                            <div aria-label="Ullamco/Laboris 90%">┌ Ullamco/Laboris ███████████░ 90%</div><br>
+                            <div aria-label="Nisi/Aliquip 95%">┌ Nisi/Aliquip ████████████ 95%</div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div style="color: #ff0040; font-weight: bold;">▓▓▓ TOOLS ▓▓▓</div>
-                        <div style="margin: 10px 0;">
-                            ┌ Commodo/Consequat ████████████ 98%<br>
-                            ┌ Duis/Aute ███████░░░░░ 65%<br>
-                            ┌ Irure/Dolor ████████░░░░ 78%<br>
-                            ┌ Reprehenderit Voluptate ██████████░░ 85%
+                    <div class="skill-item" role="listitem">
+                        <h3 style="color: #ff0040; font-weight: bold;">▓▓▓ TOOLS ▓▓▓</h3>
+                        <div style="margin: 10px 0;" aria-label="Tools skills progress">
+                            <div aria-label="Commodo/Consequat 98%">┌ Commodo/Consequat ████████████ 98%</div><br>
+                            <div aria-label="Duis/Aute 65%">┌ Duis/Aute ███████░░░░░ 65%</div><br>
+                            <div aria-label="Irure/Dolor 78%">┌ Irure/Dolor ████████░░░░ 78%</div><br>
+                            <div aria-label="Reprehenderit Voluptate 85%">┌ Reprehenderit Voluptate ██████████░░ 85%</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Projects Section -->
-        <div class="terminal-window" id="projects">
+        <section class="terminal-window" id="projects" aria-labelledby="projects-title">
             <div class="terminal-header">
                 └─$ find ./projects -type f -name "*.deployed" | head -3
             </div>
             <div class="terminal-content">
-                <div class="section-title">╭── RECENT DEPLOYMENTS ──╮</div>
-                <div style="margin: 20px 0;">
-                    <div
+                <h2 class="section-title" id="projects-title">╭── RECENT DEPLOYMENTS ──╮</h2>
+                <div style="margin: 20px 0;" role="list" aria-label="Recent projects">
+                    <article class="project-item" role="listitem"
                         style="border: 1px solid #00ffff; padding: 15px; margin: 15px 0; background: rgba(0, 255, 255, 0.05);">
-                        <div style="color: #00ffff; font-weight: bold;">▓▓▓ PROJECT_LOREM.EXE ▓▓▓</div>
+                        <h3 style="color: #00ffff; font-weight: bold;">▓▓▓ PROJECT_LOREM.EXE ▓▓▓</h3>
                         <div style="margin: 10px 0;">
-                            <pre>
+                            <pre aria-label="Project Lorem details">
 ┌─ STATUS: [LIVE] HTTPS://LOREM-IPSUM.NET
 ┌─ STACK: Lorem + Ipsum + Dolor
 ┌─ DESC: Consectetur adipiscing elit sed do eiusmod tempor
 └─ METRICS: Lorem+ active users, XX.X% uptime
                             </pre>
                         </div>
-                    </div>
-                    <div
+                    </article>
+                    <article class="project-item" role="listitem"
                         style="border: 1px solid #00ffff; padding: 15px; margin: 15px 0; background: rgba(0, 255, 255, 0.05);">
-                        <div style="color: #00ffff; font-weight: bold;">▓▓▓ DOLOR_SIT.APP ▓▓▓</div>
+                        <h3 style="color: #00ffff; font-weight: bold;">▓▓▓ DOLOR_SIT.APP ▓▓▓</h3>
                         <div style="margin: 10px 0;">
-                            <pre>
+                            <pre aria-label="Dolor Sit project details">
 ┌─ STATUS: [LIVE] HTTPS://DOLOR-SIT.COM
 ┌─ STACK: Amet + Consectetur + Adipiscing
 ┌─ DESC: Incididunt ut labore et dolore magna aliqua
 └─ METRICS: $XXX+ processed, Xs avg load time
                             </pre>
                         </div>
-                    </div>
-                    <div
+                    </article>
+                    <article class="project-item" role="listitem"
                         style="border: 1px solid #00ffff; padding: 15px; margin: 15px 0; background: rgba(0, 255, 255, 0.05);">
-                        <div style="color: #00ffff; font-weight: bold;">▓▓▓ TEMPOR_INCIDIDUNT.SYS ▓▓▓</div>
+                        <h3 style="color: #00ffff; font-weight: bold;">▓▓▓ TEMPOR_INCIDIDUNT.SYS ▓▓▓</h3>
                         <div style="margin: 10px 0;">
-                            <pre>
+                            <pre aria-label="Tempor Incididunt project details">
 ┌─ STATUS: [LIVE] HTTPS://TEMPOR-INCIDIDUNT.IO
 ┌─ STACK: Labore + Dolore + Magna
 ┌─ DESC: Ut enim ad minim veniam quis nostrud exercitation
 └─ METRICS: XXX+ data points/day, enterprise-grade security
                             </pre>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Contact Section -->
-        <div class="terminal-window" id="contact">
+        <section class="terminal-window" id="contact" aria-labelledby="contact-title">
             <div class="terminal-header">
                 └─$ ./initiate_handshake.py --secure
             </div>
             <div class="terminal-content">
-                <div class="section-title">╭── ESTABLISH CONNECTION ──╮</div>
+                <h2 class="section-title" id="contact-title">╭── ESTABLISH CONNECTION ──╮</h2>
                 <div class="contact-info">
                     <div style="margin: 30px 0;">
-                        <pre style="color: #00ff41; text-align: center;">
+                        <pre style="color: #00ff41; text-align: center;" aria-label="Contact information matrix">
 ╔═══════════════════════════════════════╗
 ║              CONTACT MATRIX           ║
 ╠═══════════════════════════════════════╣
@@ -208,11 +218,11 @@
 ╚═══════════════════════════════════════╝
                         </pre>
                     </div>
-                    <div style="color: #ffff00; margin: 20px 0;">
+                    <div style="color: #ffff00; margin: 20px 0;" role="banner">
                         > READY TO LOREM IPSUM? LET'S BUILD DOLOR SIT AMET TOGETHER.
                     </div>
                     <div style="color: #ff0040;">
-                        <pre>
+                        <pre aria-label="Secure channel status">
 ┌─[LOREM_CHANNEL_OPEN]─┐
 │ ENCRYPTION: ENABLED  │
 │ STATUS: AWAITING CONN│
@@ -221,47 +231,158 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Footer -->
-        <div style="text-align: center; margin: 40px 0; color: #666;">
+        <footer style="text-align: center; margin: 40px 0; color: #666;" role="contentinfo">
             <div style="color: #00ff41;">
-                <pre>
+                <pre aria-label="Copyright information">
 ┌─────────────────────────────────────────┐
 │ © 2025 NETRUNNER.DEV // ALL RIGHTS      │
 │ RESERVED IN THE DIGITAL REALM           │
 └─────────────────────────────────────────┘
                 </pre>
             </div>
-        </div>
+        </footer>
     </div>
 
+
     <script>
-        // Terminal typing effect
         document.addEventListener('DOMContentLoaded', function () {
-            // Smooth scrolling for navigation
             const navLinks = document.querySelectorAll('.nav-item');
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        target.focus();
+                        
+                        history.pushState(null, null, this.getAttribute('href'));
                     }
                 });
             });
 
-            // Random glitch effect on ASCII art
             setInterval(() => {
                 const asciiArt = document.querySelector('.ascii-art');
-                if (Math.random() < 0.1) { // 10% chance
+                if (asciiArt && Math.random() < 0.1) { // 10% chance
                     asciiArt.style.filter = 'hue-rotate(' + Math.random() * 360 + 'deg)';
                     setTimeout(() => {
                         asciiArt.style.filter = 'none';
                     }, 100);
                 }
             }, 2000);
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.terminal-window').forEach(el => {
+                observer.observe(el);
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                
+                if (e.altKey) {
+                    const shortcuts = {
+                        '1': '#about',
+                        '2': '#skills', 
+                        '3': '#projects',
+                        '4': '#contact'
+                    };
+                    
+                    if (shortcuts[e.key]) {
+                        e.preventDefault();
+                        document.querySelector(shortcuts[e.key]).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-2px) scale(1)';
+                });
+            });
+
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'font';
+            link.type = 'font/woff2';
+            link.crossOrigin = 'anonymous';
+            link.href = 'https://fonts.gstatic.com/s/sharetechmono/v15/J7aHnp1uDWRBEqV98dVQztYldFcLowEF.woff2';
+            document.head.appendChild(link);
+
+            const firstFocusableElement = document.querySelector('.nav-item');
+            const lastFocusableElement = document.querySelector('.contact-info a:last-child') || 
+                                       document.querySelector('.nav-item:last-child');
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusableElement) {
+                            lastFocusableElement?.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusableElement) {
+                            firstFocusableElement?.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+
+            window.addEventListener('load', function() {
+                document.body.classList.add('loaded');
+            });
+
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        const perfData = performance.getEntriesByType('navigation')[0];
+                        if (perfData && perfData.loadEventEnd - perfData.navigationStart > 3000) {
+                            console.warn('Page load time exceeded 3 seconds');
+                        }
+                    }, 0);
+                });
+            }
         });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
     </script>
 </body>
 
