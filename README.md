@@ -23,9 +23,9 @@ cd netrunner-portfolio
 ## Structure
 
 ```
-├── index.html          # Main HTML file
+├── index.html          
 ├── css/
-│   └── style.css       # All styles
+│   └── style.css       
 └── README.md
 ```
 
