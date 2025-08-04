@@ -10,7 +10,7 @@
          ░    ░  ░           ░        ░              ░          ░    ░  ░   ░
 ```
 
-A simple, cyberpunk-themed portfolio website built with vanilla HTML, CSS.
+A simple, cyberpunk-themed portfolio website built with vanilla HTML, CSS. 100% free to use and modify.
 
 ## 🚀 Quick Start
 
