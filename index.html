@@ -298,6 +298,8 @@
             var hint = document.querySelector('.login-hint');
             var ready = false;
 
+            document.documentElement.style.overflow = 'hidden';
+
             var fakeUser = 'netrunner';
             var fakePass = 'N3tR4nn3r!xK';
 
@@ -332,7 +334,10 @@
                 });
                 setTimeout(function () {
                     screen.classList.add('fade-out');
-                    setTimeout(function () { screen.style.display = 'none'; }, 800);
+                    setTimeout(function () {
+                        screen.style.display = 'none';
+                        document.documentElement.style.overflow = '';
+                    }, 800);
                 }, 2600);
             }
 
