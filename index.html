@@ -15,6 +15,29 @@
 </head>
 
 <body class="scanlines">
+
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div class="login-window">
+            <div class="login-header">┌─[netrunner@secure]─[/auth/login]</div>
+            <div class="login-body">
+                <pre class="login-banner"> NETRUNNER // SECURE SHELL v2.4.1
+ ─────────────────────────────────
+ NODE: NETRUNNER.DEV
+ PROTOCOL: ENCRYPTED
+ ─────────────────────────────────</pre>
+                <div id="login-step-user" class="login-prompt">
+                    <span>login:&nbsp;</span><input id="login-input-user" type="text" autocomplete="off" spellcheck="false" aria-label="Username">
+                </div>
+                <div id="login-step-pass" class="login-prompt" style="display:none">
+                    <span>password:&nbsp;</span><input id="login-input-pass" type="password" autocomplete="off" aria-label="Password">
+                </div>
+                <div id="login-output"></div>
+                <div class="login-hint">[ ENTER ] to authenticate</div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Header Terminal -->
         <div class="terminal-window" id="win-header">
@@ -265,6 +288,65 @@
 
 
     <script>
+        (function () {
+            var screen = document.getElementById('login-screen');
+            var stepUser = document.getElementById('login-step-user');
+            var stepPass = document.getElementById('login-step-pass');
+            var inputUser = document.getElementById('login-input-user');
+            var inputPass = document.getElementById('login-input-pass');
+            var output = document.getElementById('login-output');
+            var hint = document.querySelector('.login-hint');
+            var phase = 1;
+
+            var authLines = [
+                { text: '> ESTABLISHING ENCRYPTED TUNNEL...', delay: 100 },
+                { text: '> AUTHENTICATING...', delay: 600 },
+                { text: '> VERIFYING ACCESS LEVEL...', delay: 1050 },
+                { text: '> LOADING USER PROFILE...', delay: 1500 },
+                { text: '> ACCESS GRANTED', delay: 1900, color: '#00ffff' },
+            ];
+
+            function freezePrompt(el, text) {
+                while (el.firstChild) el.removeChild(el.firstChild);
+                var s = document.createElement('span');
+                s.textContent = text;
+                el.appendChild(s);
+            }
+
+            function authenticate() {
+                if (hint) hint.style.display = 'none';
+                authLines.forEach(function (l) {
+                    setTimeout(function () {
+                        var div = document.createElement('div');
+                        div.textContent = l.text;
+                        if (l.color) div.style.color = l.color;
+                        output.appendChild(div);
+                    }, l.delay);
+                });
+                setTimeout(function () {
+                    screen.classList.add('fade-out');
+                    setTimeout(function () { screen.style.display = 'none'; }, 800);
+                }, 2600);
+            }
+
+            inputUser.addEventListener('keydown', function (e) {
+                if (e.key !== 'Enter' || phase !== 1) return;
+                phase = 2;
+                freezePrompt(stepUser, 'login: ' + (inputUser.value.trim() || 'ghost'));
+                stepPass.style.display = 'flex';
+                inputPass.focus();
+            });
+
+            inputPass.addEventListener('keydown', function (e) {
+                if (e.key !== 'Enter' || phase !== 2) return;
+                phase = 3;
+                freezePrompt(stepPass, 'password: ' + '\u2022'.repeat(inputPass.value.length || 8));
+                authenticate();
+            });
+
+            inputUser.focus();
+        }());
+
         function toggleWin(id) {
             var win = document.getElementById(id);
             if (!win) return;

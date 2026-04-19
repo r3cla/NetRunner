@@ -31,10 +31,10 @@ cd NetRunner
 
 ## Features
 
-- Toggleable Win95-style windows — sections open/close via the nav bar
-- Cyberpunk terminal aesthetic — scanlines, glitch animation, ASCII art
-- Fully responsive — mobile, tablet, and desktop layouts
-- Accessible — semantic HTML, ARIA labels, keyboard navigation (Alt+1-4)
+- Toggleable Win95-style windows - sections open/close via the nav bar
+- Cyberpunk terminal aesthetic - scanlines, glitch animation, ASCII art
+- Fully responsive - mobile, tablet, and desktop layouts
+- Accessible - semantic HTML, ARIA labels, keyboard navigation (Alt+1-4)
 - Reduced-motion support via `prefers-reduced-motion`
 - High-contrast mode support via `prefers-contrast`
 - Print stylesheet included
@@ -47,4 +47,4 @@ cd NetRunner
 
 ## License
 
-MIT — free to fork and customise.
+MIT - free to fork and customise.
