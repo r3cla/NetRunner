@@ -158,6 +158,8 @@ body::after {
     line-height: 1;
     white-space: pre;
     margin: 0;
+    overflow-x: hidden;
+    max-width: none;
 }
 
 .glitch {
