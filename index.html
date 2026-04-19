@@ -27,10 +27,10 @@
  PROTOCOL: ENCRYPTED
  ─────────────────────────────────</pre>
                 <div id="login-step-user" class="login-prompt">
-                    <span>login:&nbsp;</span><input id="login-input-user" type="text" autocomplete="off" spellcheck="false" aria-label="Username">
+                    <span>login:&nbsp;</span><input id="login-input-user" type="text" readonly autocomplete="off" spellcheck="false" aria-label="Username">
                 </div>
                 <div id="login-step-pass" class="login-prompt" style="display:none">
-                    <span>password:&nbsp;</span><input id="login-input-pass" type="password" autocomplete="off" aria-label="Password">
+                    <span>password:&nbsp;</span><input id="login-input-pass" type="password" readonly autocomplete="off" aria-label="Password">
                 </div>
                 <div id="login-output"></div>
                 <div class="login-hint">[ ENTER ] to authenticate</div>
@@ -296,7 +296,10 @@
             var inputPass = document.getElementById('login-input-pass');
             var output = document.getElementById('login-output');
             var hint = document.querySelector('.login-hint');
-            var phase = 1;
+            var ready = false;
+
+            var fakeUser = 'netrunner';
+            var fakePass = 'N3tR4nn3r!xK';
 
             var authLines = [
                 { text: '> ESTABLISHING ENCRYPTED TUNNEL...', delay: 100 },
@@ -314,7 +317,11 @@
             }
 
             function authenticate() {
+                if (!ready) return;
+                ready = false;
                 if (hint) hint.style.display = 'none';
+                freezePrompt(stepUser, 'login: ' + fakeUser);
+                freezePrompt(stepPass, 'password: ' + '\u2022'.repeat(fakePass.length));
                 authLines.forEach(function (l) {
                     setTimeout(function () {
                         var div = document.createElement('div');
@@ -329,28 +336,33 @@
                 }, 2600);
             }
 
-            inputUser.addEventListener('keydown', function (e) {
-                if (e.key === ' ') { e.preventDefault(); return; }
-                if (e.key !== 'Enter' || phase !== 1) return;
-                phase = 2;
-                freezePrompt(stepUser, 'login: ' + (inputUser.value.trim() || 'ghost'));
-                stepPass.style.display = 'flex';
-                var fakePass = 'N3tR4nn3r!xK';
+            function typeString(input, str, speed, done) {
                 var i = 0;
                 var iv = setInterval(function () {
-                    inputPass.value = fakePass.slice(0, ++i);
-                    if (i >= fakePass.length) {
-                        clearInterval(iv);
-                        phase = 3;
-                        setTimeout(function () {
-                            freezePrompt(stepPass, 'password: ' + '\u2022'.repeat(fakePass.length));
-                            authenticate();
-                        }, 400);
-                    }
-                }, 80);
+                    input.value = str.slice(0, ++i);
+                    if (i >= str.length) { clearInterval(iv); if (done) done(); }
+                }, speed);
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') authenticate();
             });
 
-            inputUser.focus();
+            if (hint) hint.addEventListener('click', authenticate);
+
+            setTimeout(function () {
+                typeString(inputUser, fakeUser, 100, function () {
+                    setTimeout(function () {
+                        stepPass.style.display = 'flex';
+                        setTimeout(function () {
+                            typeString(inputPass, fakePass, 80, function () {
+                                ready = true;
+                                if (hint) hint.classList.add('ready');
+                            });
+                        }, 200);
+                    }, 400);
+                });
+            }, 500);
         }());
 
         function toggleWin(id) {
