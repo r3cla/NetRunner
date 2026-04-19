@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +5,7 @@
 }
 
 body {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Consolas', 'SF Mono', 'Menlo', 'Ubuntu Mono', monospace;
     background: #0a0a0a;
     color: #00ff41;
     line-height: 1.4;
@@ -42,7 +40,7 @@ body::after {
     pointer-events: none;
     z-index: 1000;
     will-change: transform;
-    transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0);
 }
 
 .container {
@@ -96,11 +94,12 @@ body::after {
     text-align: center;
     margin: 20px 0;
     text-shadow: 0 0 10px #00ffff;
-    overflow-x: auto;
+    overflow: hidden;
+    padding: 0 4px;
 }
 
 .ascii-art pre {
-    font-size: 8px;
+    font-size: clamp(4px, 1vw, 8px);
     line-height: 1;
     white-space: pre;
     margin: 0;
@@ -187,7 +186,7 @@ body::after {
 .skill-item:hover {
     border-color: #00ffff;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
 }
 
 .contact-info {
@@ -249,10 +248,6 @@ body::after {
 
 /* Tablet styles */
 @media (max-width: 768px) {
-    .ascii-art pre {
-        font-size: 6px;
-    }
-    
     .nav-menu {
         flex-direction: column;
         align-items: center;
@@ -275,12 +270,6 @@ body::after {
 
 /* Mobile styles */
 @media (max-width: 480px) {
-    .ascii-art pre {
-        font-size: 4px;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    
     .container {
         padding: 10px;
     }
@@ -376,11 +365,6 @@ body::after {
     }
 }
 
-/* Dark mode support (for systems that prefer it) */
-@media (prefers-color-scheme: dark) {
-    /* Already optimized for dark mode */
-}
-
 /* Focus indicators for better keyboard navigation */
 .terminal-window:focus-within {
     box-shadow: 0 0 25px rgba(0, 255, 65, 0.4);
@@ -393,11 +377,6 @@ html {
 
 /* Selection styling */
 ::selection {
-    background: rgba(0, 255, 65, 0.3);
-    color: #ffffff;
-}
-
-::-moz-selection {
     background: rgba(0, 255, 65, 0.3);
     color: #ffffff;
 }
