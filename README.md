@@ -1,45 +1,50 @@
 ```
-███▄    █ ▓█████▄▄▄█████▓ ██▀███   █    ██  ███▄    █  ███▄    █ ▓█████  ██▀███  
+███▄    █ ▓█████▄▄▄█████▓ ██▀███   █    ██  ███▄    █  ███▄    █ ▓█████  ██▀███
  ██ ▀█   █ ▓█   ▀▓  ██▒ ▓▒▓██ ▒ ██▒ ██  ▓██▒ ██ ▀█   █  ██ ▀█   █ ▓█   ▀ ▓██ ▒ ██▒
 ▓██  ▀█ ██▒▒███  ▒ ▓██░ ▒░▓██ ░▄█ ▒▓██  ▒██░▓██  ▀█ ██▒▓██  ▀█ ██▒▒███   ▓██ ░▄█ ▒
-▓██▒  ▐▌██▒▒▓█  ▄░ ▓██▓ ░ ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒▓██▒  ▐▌██▒▒▓█  ▄ ▒██▀▀█▄  
+▓██▒  ▐▌██▒▒▓█  ▄░ ▓██▓ ░ ▒██▀▀█▄  ▓▓█  ░██░▓██▒  ▐▌██▒▓██▒  ▐▌██▒▒▓█  ▄ ▒██▀▀█▄
 ▒██░   ▓██░░▒████▒ ▒██▒ ░ ░██▓ ▒██▒▒▒█████▓ ▒██░   ▓██░▒██░   ▓██░░▒████▒░██▓ ▒██▒
 ░ ▒░   ▒ ▒ ░░ ▒░ ░ ▒ ░░   ░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒ ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒▓ ░▒▓░
 ░ ░░   ░ ▒░ ░ ░  ░   ░      ░▒ ░ ▒░░░▒░ ░ ░ ░ ░░   ░ ▒░░ ░░   ░ ▒░ ░ ░  ░  ░▒ ░ ▒░
-   ░   ░ ░    ░    ░        ░░   ░  ░░░ ░ ░    ░   ░ ░    ░   ░ ░    ░     ░░   ░ 
+   ░   ░ ░    ░    ░        ░░   ░  ░░░ ░ ░    ░   ░ ░    ░   ░ ░    ░     ░░   ░
          ░    ░  ░           ░        ░              ░          ░    ░  ░   ░
 ```
 
-A simple, cyberpunk-themed portfolio website built with vanilla HTML, CSS. 100% free to use and modify.
+A lightweight, cyberpunk-themed portfolio template built with vanilla HTML and CSS. Zero dependencies, zero build step. Fork, fill in your details, and ship.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/username/netrunner-portfolio
-cd netrunner-portfolio
-# Open index.html in browser or serve with any HTTP server
+git clone https://github.com/r3cla/NetRunner
+cd NetRunner
+# Open index.html in a browser or serve with any static HTTP server
 ```
 
 ## Structure
 
 ```
-├── index.html          
+├── index.html
 ├── css/
-│   └── style.css       
+│   └── style.css
 └── README.md
 ```
+
+## Features
+
+- Toggleable Win95-style windows — sections open/close via the nav bar
+- Cyberpunk terminal aesthetic — scanlines, glitch animation, ASCII art
+- Fully responsive — mobile, tablet, and desktop layouts
+- Accessible — semantic HTML, ARIA labels, keyboard navigation (Alt+1-4)
+- Reduced-motion support via `prefers-reduced-motion`
+- High-contrast mode support via `prefers-contrast`
+- Print stylesheet included
 
 ## Performance
 
 - < 50KB total size
 - < 1s load time
-- 95+ performance score
 - Zero dependencies
 
 ## License
 
-MIT License - feel free to fork and customize!
-
----
-
-*Ready to jack in?*
+MIT — free to fork and customise.
