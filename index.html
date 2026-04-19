@@ -290,6 +290,12 @@
     <script>
         (function () {
             var screen = document.getElementById('login-screen');
+
+            if (sessionStorage.getItem('nr_auth')) {
+                screen.style.display = 'none';
+                return;
+            }
+
             var stepUser = document.getElementById('login-step-user');
             var stepPass = document.getElementById('login-step-pass');
             var inputUser = document.getElementById('login-input-user');
@@ -307,11 +313,11 @@
             var fakePass = 'N3tR4nn3r!xK';
 
             var authLines = [
-                { text: '> ESTABLISHING ENCRYPTED TUNNEL...', delay: 100 },
-                { text: '> AUTHENTICATING...', delay: 600 },
-                { text: '> VERIFYING ACCESS LEVEL...', delay: 1050 },
-                { text: '> LOADING USER PROFILE...', delay: 1500 },
-                { text: '> ACCESS GRANTED', delay: 1900, color: '#00ffff' },
+                { text: '> ESTABLISHING ENCRYPTED TUNNEL...', delay: 80 },
+                { text: '> AUTHENTICATING...', delay: 380 },
+                { text: '> VERIFYING ACCESS LEVEL...', delay: 660 },
+                { text: '> LOADING USER PROFILE...', delay: 940 },
+                { text: '> ACCESS GRANTED', delay: 1200, color: '#00ffff' },
             ];
 
             function freezePrompt(el, text) {
@@ -336,12 +342,13 @@
                     }, l.delay);
                 });
                 setTimeout(function () {
+                    sessionStorage.setItem('nr_auth', '1');
                     screen.classList.add('fade-out');
                     setTimeout(function () {
                         screen.style.display = 'none';
                         document.documentElement.style.overflow = '';
-                    }, 800);
-                }, 2600);
+                    }, 500);
+                }, 1700);
             }
 
             function typeString(input, str, speed, done) {
@@ -359,18 +366,18 @@
             if (hint) hint.addEventListener('click', authenticate);
 
             setTimeout(function () {
-                typeString(inputUser, fakeUser, 100, function () {
+                typeString(inputUser, fakeUser, 60, function () {
                     setTimeout(function () {
                         stepPass.style.display = 'flex';
                         setTimeout(function () {
-                            typeString(inputPass, fakePass, 80, function () {
+                            typeString(inputPass, fakePass, 50, function () {
                                 ready = true;
                                 if (hint) hint.classList.add('ready');
                             });
-                        }, 200);
-                    }, 400);
+                        }, 150);
+                    }, 250);
                 });
-            }, 500);
+            }, 200);
         }());
 
         function toggleWin(id) {

@@ -146,7 +146,8 @@ body::after {
 
 .ascii-art {
     color: #00ffff;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 20px 0;
     text-shadow: 0 0 10px #00ffff;
     overflow: hidden;
@@ -157,6 +158,7 @@ body::after {
     font-size: clamp(4px, 1vw, 8px);
     line-height: 1;
     white-space: pre;
+    text-align: left;
     margin: 0;
     overflow-x: hidden;
     max-width: none;
@@ -393,7 +395,7 @@ body::after {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.5s ease;
 }
 
 #login-screen.fade-out {
