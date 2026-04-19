@@ -31,7 +31,7 @@ cd netrunner-portfolio
 
 ## Performance
 
-- < 100KB total size
+- < 50KB total size
 - < 1s load time
 - 95+ performance score
 - Zero dependencies
