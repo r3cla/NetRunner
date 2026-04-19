@@ -330,18 +330,24 @@
             }
 
             inputUser.addEventListener('keydown', function (e) {
+                if (e.key === ' ') { e.preventDefault(); return; }
                 if (e.key !== 'Enter' || phase !== 1) return;
                 phase = 2;
                 freezePrompt(stepUser, 'login: ' + (inputUser.value.trim() || 'ghost'));
                 stepPass.style.display = 'flex';
-                inputPass.focus();
-            });
-
-            inputPass.addEventListener('keydown', function (e) {
-                if (e.key !== 'Enter' || phase !== 2) return;
-                phase = 3;
-                freezePrompt(stepPass, 'password: ' + '\u2022'.repeat(inputPass.value.length || 8));
-                authenticate();
+                var fakePass = 'N3tR4nn3r!xK';
+                var i = 0;
+                var iv = setInterval(function () {
+                    inputPass.value = fakePass.slice(0, ++i);
+                    if (i >= fakePass.length) {
+                        clearInterval(iv);
+                        phase = 3;
+                        setTimeout(function () {
+                            freezePrompt(stepPass, 'password: ' + '\u2022'.repeat(fakePass.length));
+                            authenticate();
+                        }, 400);
+                    }
+                }, 80);
             });
 
             inputUser.focus();
