@@ -380,12 +380,17 @@ body::after {
 /* Login screen */
 #login-screen {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
     background: #0a0a0a;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     transition: opacity 0.8s ease;
 }
 
@@ -524,6 +529,7 @@ body::after {
 /* Smooth scrolling for the whole page */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Selection styling */
