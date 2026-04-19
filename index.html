@@ -296,6 +296,9 @@
             var inputPass = document.getElementById('login-input-pass');
             var output = document.getElementById('login-output');
             var hint = document.querySelector('.login-hint');
+            if (hint && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+                hint.textContent = '[ TAP ] to authenticate';
+            }
             var ready = false;
 
             document.documentElement.style.overflow = 'hidden';
