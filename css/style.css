@@ -139,6 +139,11 @@ body::after {
     padding: 20px;
 }
 
+.terminal-content pre {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
 .ascii-art {
     color: #00ffff;
     text-align: center;
@@ -322,29 +327,38 @@ body::after {
     .container {
         padding: 10px;
     }
-    
+
     .terminal-content {
         padding: 15px;
     }
-    
+
     .nav-item {
         padding: 8px 16px;
         font-size: 14px;
     }
-    
+
     .section-title {
         font-size: 16px;
         letter-spacing: 1px;
     }
-    
+
     .skill-grid {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-    
+
     .terminal-header {
         font-size: 10px;
         padding: 3px 5px;
+    }
+
+    .login-body {
+        padding: 16px;
+    }
+
+    .login-banner {
+        font-size: 11px;
+        margin-bottom: 16px;
     }
 }
 
@@ -406,6 +420,7 @@ body::after {
     margin: 0 0 24px;
     line-height: 1.5;
     font-size: 13px;
+    overflow-x: auto;
 }
 
 .login-prompt {
